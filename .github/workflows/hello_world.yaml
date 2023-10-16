@@ -1,4 +1,4 @@
-name Hellow world workflow
+name: Hello world workflow
 
 on:
 	push:
