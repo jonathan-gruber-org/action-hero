@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: "comment with Github API"
         run: 
-          gh api repos/${ORGANIZATION}/${REPOSITORY}/issues/comments -f body="second update"
+          gh api repos/${ORGANIZATION}/${REPOSITORY}/issues/${ISSUE_NUMBER}/comments -f body="second update"
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN  }}
           ORGANIZATION: ${{ github.event.organization.login }}
