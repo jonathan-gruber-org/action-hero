@@ -10,13 +10,24 @@ jobs:
     steps:
       - name: "comment with Github API"
         run: 
-          gh api -X POST \
-            https://api.github.com/repos/${ORGANIZATION}/${REPOSITORY}/issues/19/comments
+          gh api repos/${ORGANIZATION}/${REPOSITORY}/issues
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN  }}
           ORGANIZATION: ${{ github.event.organization.login }}
           REPOSITORY: ${{ github.event.repository.name }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
+
+    
+#    steps:
+ #     - name: "comment with Github API"
+  #      run: 
+   #       gh api -X POST \
+    #        https://api.github.com/repos/${ORGANIZATION}/${REPOSITORY}/issues/19/comments
+     #   env: 
+      #    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN  }}
+       #   ORGANIZATION: ${{ github.event.organization.login }}
+        #  REPOSITORY: ${{ github.event.repository.name }}
+         # ISSUE_NUMBER: ${{ github.event.issue.number }}
 
 #  comment-with-action:
  #   runs-on: ubuntu-latest
