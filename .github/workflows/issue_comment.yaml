@@ -11,7 +11,7 @@ jobs:
       - name: "comment with Github API"
         run: 
           gh api repos/${ORGANIZATION}/${REPOSITORY}/issues/${ISSUE_NUMBER}/comments  \
-          -f body="second update"
+          -f body="secondupdate"
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN  }}
           ORGANIZATION: ${{ github.event.organization.login }}
